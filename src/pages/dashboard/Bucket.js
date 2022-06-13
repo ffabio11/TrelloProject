@@ -5,6 +5,23 @@ import Form from "./Form";
 import { CardContentFormModel } from "./FormModel";
 import { httpPostContent } from "../../api.http.js";
 import { useSelector } from "react-redux";
+import { useTheme, createUseStyles } from "react-jss";
+
+const useStyles = createUseStyles(() => ({
+  bucket: {
+    
+  },
+  formContainer: {
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: "rgba(0,0,0,.4)",
+    display: "flex",
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  }
+}));
+
 
 const Bucket = ({ title, children, dashKey, loadDashboard }) => {
   const [show, setShow] = useState(false);
@@ -37,14 +54,16 @@ const Bucket = ({ title, children, dashKey, loadDashboard }) => {
     }
   };
 
+  const classes = useStyles();
+
   return (
-    <div className="bucket">
+    <div className={classes.bucket}>
       <h2>{title}</h2>
       <div className="cards">{children}</div>
       <Button onClickHandler={onClickHandler}>Add Card</Button>
       {show && (
         <PopUp>
-          <div className="form-container">
+          <div className={classes.formContainer}>
             <Form onSubmit={onSubmitHandler} onClose={() => setShow(false)}>
               Add Card
             </Form>

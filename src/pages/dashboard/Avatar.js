@@ -16,6 +16,7 @@ const useStyles = createUseStyles(() => ({
     width: 30,
     borderRadius: "100%",
     height: 30,
+    border: '1px solid grey',
   },
 
   addAvatar: {
@@ -30,8 +31,13 @@ const useStyles = createUseStyles(() => ({
     margin: 0,
     marginBlock: 0,
     padding: 0,
-    fontSize: 24,
-    transform: "translateX(-20px)",
+    fontSize: 19,
+    '&:hover': {
+      transform: 'translateX(-20px)',
+      // animation: 'addAvatar',
+      // animationDuration: '3s',
+      // animationTimingFunction: 'ease',
+    }
   },
 }));
 export default function Avatar() {

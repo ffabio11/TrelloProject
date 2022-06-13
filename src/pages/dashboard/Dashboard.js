@@ -9,13 +9,13 @@ import myImg from "../../ManuelBlurrato.jpg";
 const useStyles = createUseStyles((theme) => ({
   dashboard: {
     display: "flex",
+    overflow: 'scroll',
     gap: 16,
     width: "100vw",
     height: "100vh",
-    backgroundColor: theme.colors.primary,
-    color: theme.colors.text,
-    justifyContent: "space-around",
-    padding: 8,
+    //backgroundColor: theme.colors.primary,
+    //color: theme.colors.text,
+    padding: 14,
   },
 }));
 
@@ -50,7 +50,7 @@ const Dashboard = () => {
             myDashboards.map(({ name, id, contents = [] }) => {
               return (
                 <Bucket
-                  title={name}
+                  //title={name}
                   key={id}
                   dashKey={id}
                   loadDashboard={loadDashboard}
